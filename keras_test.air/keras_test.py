@@ -769,9 +769,10 @@ auto_setup(__file__)
 a = 517
 b = 525
 touch((a, b))
+snapshot(filename=r"./test.jpg", msg="test")
 
 yolo = YOLO()
-path = '/home/lou/keras-yolo3/VOCdevkit/VOC2007/JPEGImages/1.jpg'
+path = './test.jpg'           #'/home/lou/keras-yolo3/VOCdevkit/VOC2007/JPEGImages/1.jpg' #specify input screenshot file path
 try:
     image = Image.open(path)
 except:
@@ -779,8 +780,3 @@ except:
 else:
     r_image = yolo.detect_image(image)
 
-# touch(Template(r"tpl1627200350263.png", record_pos=(0.001, 0.231), resolution=(1080, 2340)))
-# touch(Template(r"tpl1627200362245.png", record_pos=(0.403, -0.937), resolution=(1080, 2340)))
-# touch(Template(r"tpl1627200371694.png", record_pos=(0.36, 0.231), resolution=(1080, 2340)))
-# touch((517,525))
-# touch((974,157))
