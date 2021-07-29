@@ -686,6 +686,7 @@ class YOLO(object):
             x_value = (right + left) / 2
             y_value = (bottom + top) / 2
             ############################################################################################################AirTest Integrated Here!
+            #Implementing Airtest API for detection results
 
             if predicted_class == "touch_button":
                 print("Touch button detected!")
