@@ -145,7 +145,7 @@ def get_random_data (annotation_line, input_shape, random=True, max_boxes=20, ji
 
     return image_data, box_data
 
-
+##############################################################################################################Model & Network
 @wraps(Conv2D)
 def DarknetConv2D (*args, **kwargs):
     """Wrapper to set Darknet parameters for Convolution2D."""
@@ -685,7 +685,7 @@ class YOLO(object):
             print(label, (left, top), (right, bottom))  # coordinates shown here
             x_value = (right + left) / 2
             y_value = (bottom + top) / 2
-            ############################################################################################################AirTest Implemented Here!
+            ############################################################################################################AirTest Integrated Here!
             if predicted_class == "touch_button":
                 print("Touch button detected!")
                 x1 = int(x_value)
@@ -699,6 +699,22 @@ class YOLO(object):
                 y2 = int(y_value)
                 print("Touching at coordinate (%d,%d)" % (x2, y2))
                 touch((x2, y2))
+                sleep(6)
+                print(predicted_class)
+            elif predicted_class == "swipe_bar":
+                print("Swipe bar detected!")
+                x3 = int(x_value)
+                y3 = int(y_value)
+                print("Touching at coordinate (%d,%d)" % (x3, y3))
+                touch((x3, y3))
+                sleep(6)
+                print(predicted_class)
+            elif predicted_class == "bar":
+                print("Bar detected!")
+                x4 = int(x_value)
+                y4 = int(y_value)
+                print("Touching at coordinate (%d,%d)" % (x4, y4))
+                touch((x4, y4))
                 sleep(6)
                 print(predicted_class)
             #############################################################################################################
