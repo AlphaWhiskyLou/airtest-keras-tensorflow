@@ -773,7 +773,7 @@ touch((a, b))
 print("Test touch finished")
 print("Testing sequence starts here. Taking snapshot first.")
 snapshot(filename=r"./test.jpg", msg="test")
-print("Snapshot taken, start detecting UI components")
+print("Snapshot taken, start detecting UI components.")
 
 yolo = YOLO()
 path = './test.jpg'           #'/home/lou/keras-yolo3/VOCdevkit/VOC2007/JPEGImages/1.jpg' #specify input screenshot file path
