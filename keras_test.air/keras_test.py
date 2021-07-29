@@ -776,7 +776,8 @@ path = './test.jpg'           #'/home/lou/keras-yolo3/VOCdevkit/VOC2007/JPEGImag
 try:
     image = Image.open(path)
 except:
-    print('Open Error! Try again!')
+    print('Faulty Snapshot!')
+    exit(1)
 else:
     r_image = yolo.detect_image(image)
 
