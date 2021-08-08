@@ -683,41 +683,41 @@ class YOLO(object):
             right = min(image.size[0], np.floor(right + 0.5).astype('int32'))
 
             print(label, (left, top), (right, bottom))  # coordinates shown here
-            x_value = (right + left) / 2
-            y_value = (bottom + top) / 2
+            x_middle = (right + left) / 2
+            y_middle = (bottom + top) / 2
             ############################################################################################################AirTest Integrated Here!
             #Implementing Airtest API for detection results
 
             if predicted_class == "touch_button":
                 print("Touch button detected!")
-                x1 = int(x_value)
-                y1 = int(y_value)
+                x1 = int(x_middle)
+                y1 = int(y_middle)
                 print("Touching at coordinate (%d,%d)"%(x1,y1))
                 touch((x1, y1))      #touch(v, times=1, **kwargs)
                 sleep(6)
 
             elif predicted_class == "swipe_button":
                 print("Swipe button detected!")
-                x2 = int(x_value)
-                y2 = int(y_value)
+                x2 = int(x_middle)
+                y2 = int(y_middle)
                 print("Touching at coordinate (%d,%d)" % (x2, y2))
-                touch((x2, y2))      #touch(v, times=1, **kwargs)
+                swipe((int(left),y_middle),(int(right),y_middle))      #swipe(v1, v2=None, vector=None, **kwargs) eg.swipe((100, 100), (200, 200))
                 sleep(6)
 
             elif predicted_class == "swipe_bar":
                 print("Swipe bar detected!")
-                x3_start = int()
-                y3_start = int()
-                x3_end = int()
-                y3_end = int()
+                x3_start = int(x_middle)
+                y3_start = int(top)
+                x3_end = int(x_middle)
+                y3_end = int(bottom)
                 print("Swiping from (%d,%d) to (%d,%d)" % (x3_start, y3_start, x3_end, y3_end))
                 swipe((x3_start, y3_start),(x3_end, y3_end))   #using coordinates      #swipe(v1, v2=None, vector=None, **kwargs)
                 sleep(6)
 
             elif predicted_class == "bar":
                 print("Bar detected!")
-                x4 = int(x_value)
-                y4 = int(y_value)
+                x4 = int(x_middle)
+                y4 = int(y_middle)
                 print("Touching at coordinate (%d,%d)" % (x4, y4))
                 touch((x4, y4))       #touch(v, times=1, **kwargs)
                 sleep(6)
