@@ -718,7 +718,9 @@ class YOLO(object):
                 y4 = int(y_middle)
                 print("Touching at coordinate (%d,%d)" % (x4, y4))
                 touch((x4, y4))       #touch(v, times=1, **kwargs)
-                sleep(6)
+                sleep(3)
+                swipe((0,1200),(500,1200))  #return to previous page
+                sleep(3)
 
             #############################################################################################################
 
