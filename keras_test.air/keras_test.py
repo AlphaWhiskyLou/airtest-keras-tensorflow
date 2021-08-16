@@ -222,7 +222,6 @@ def yolo_body (inputs, num_anchors, num_classes):
 
     return Model(inputs, [y1, y2, y3])
 
-
 def tiny_yolo_body (inputs, num_anchors, num_classes):
     '''Create Tiny YOLO_v3 model CNN body in keras.'''
     x1 = compose(
@@ -254,7 +253,6 @@ def tiny_yolo_body (inputs, num_anchors, num_classes):
         DarknetConv2D(num_anchors * (num_classes + 5), (1, 1)))([x2, x1])
 
     return Model(inputs, [y1, y2])
-
 
 def yolo_head (feats, anchors, num_classes, input_shape, calc_loss=False):
     """Convert final layer features to bounding box parameters."""
@@ -478,7 +476,7 @@ def box_iou (b1, b2):
 
     return iou
 
-
+"""
 def yolo_loss (args, anchors, num_classes, ignore_thresh=.5, print_loss=False):
     '''Return yolo_loss tensor
 
@@ -552,11 +550,11 @@ def yolo_loss (args, anchors, num_classes, ignore_thresh=.5, print_loss=False):
             loss = tf.Print(loss, [loss, xy_loss, wh_loss, confidence_loss, class_loss, K.sum(ignore_mask)],
                             message='loss: ')
     return loss
-
+"""
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'model_data/logs/trained_weights_final.h5',
+        "model_path": 'model_data/logs/test_model.h5',
         "anchors_path": 'model_data/yolo_anchors.txt',
         "classes_path": 'model_data/my_class.txt',
         "score": 0.3,

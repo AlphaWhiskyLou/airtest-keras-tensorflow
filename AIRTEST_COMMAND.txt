@@ -1,0 +1,1 @@
+airtest run keras_test.air --device Android://127.0.0.1:5037/MQS7N19527018612
