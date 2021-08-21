@@ -478,7 +478,7 @@ def box_iou (b1, b2):
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'model_data/logs/test_model.h5',
+        "model_path": 'model_data/logs/test_model_1.h5',
         "anchors_path": 'model_data/yolo_anchors.txt',
         "classes_path": 'model_data/my_class.txt',
         "score": 0.3,
@@ -688,13 +688,10 @@ def detect_img (yolo):
     yolo.close_session()
 
 
-#####################################################################################################################
+#####################################################################################################################Device Setup & Testing
 auto_setup(__file__)
 print("Setup Completed!")
-a = 517
-b = 525
-touch((a, b))
-print("Test touch finished")
+touch((0,0))
 print("Testing sequence starts here. Taking snapshot first.")
 snapshot(filename=r"./test.jpg", msg="test")
 print("Snapshot taken, start detecting UI components.")
