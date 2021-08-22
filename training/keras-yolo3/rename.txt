@@ -1,0 +1,8 @@
+rename -v 's/[ ]+//g' *.jpg
+
+rename -v 's/[()]//g' *.jpg 
+
+rename -v 's/(copy)/a/' *.xml
+
+rename -v 's/^/b/g' *.xml
+
